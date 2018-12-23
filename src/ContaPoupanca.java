@@ -2,10 +2,13 @@
 public class ContaPoupanca {
 	
 	private double saldoPoupanca;
-	
 	private static double taxaDeJurosAnual;
 	
-	
+	public ContaPoupanca(double saldoPoupanca) {
+		super();
+		this.saldoPoupanca = saldoPoupanca;
+	}
+
 	public void calculaJurosMensal() {
 		setSaldoPoupanca(getSaldoPoupanca() + (getSaldoPoupanca() * getTaxaDeJurosAnual()/12));
 	}
