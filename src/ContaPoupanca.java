@@ -12,13 +12,6 @@ public class ContaPoupanca {
 	}
 
 	public void calculaJurosMensal() {
-		/*
-		BigDecimal porcentagemMes = taxaDeJurosAnual.divide(BigDecimal.valueOf(12.0), MathContext.DECIMAL128);
-		BigDecimal saldoDivididoPor100 = getSaldoPoupanca().divide(BigDecimal.valueOf(100.0));
-		BigDecimal valorJuros = porcentagemMes.multiply(saldoDivididoPor100);
-		*/
-		
-		//setSaldoPoupanca(getSaldoPoupanca().add(valorJuros));
 		
 		setSaldoPoupanca(getSaldoPoupanca().
 				add((taxaDeJurosAnual.
@@ -26,7 +19,6 @@ public class ContaPoupanca {
 				multiply(getSaldoPoupanca().
 				divide(BigDecimal.valueOf(100.0))))));
 		
-		//setSaldoPoupanca(getSaldoPoupanca() + (getTaxaDeJurosAnual()/BigDecimal.valueOf(12)) * getSaldoPoupanca() / 100 );
 	}
 	
 	public static void modificaTaxaDeJuros(double taxaDeJurosAnual) {

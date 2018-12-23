@@ -84,7 +84,6 @@ public class ContaPoupancaTeste {
 				conta[j].calculaJurosMensal();
 				System.out.printf("%s\t\t", NumberFormat.getCurrencyInstance().format(conta[j].getSaldoPoupanca()));
 				
-				
 			}
 			
 			System.out.println();
