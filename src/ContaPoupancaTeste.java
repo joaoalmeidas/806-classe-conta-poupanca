@@ -5,13 +5,19 @@ public class ContaPoupancaTeste {
 		
 		ContaPoupanca cliente1 = new ContaPoupanca(2000);
 		ContaPoupanca cliente2 = new ContaPoupanca(3000);
+		
 		ContaPoupanca.modificaTaxaDeJuros(4);
 		
 		exibeJurosClientes(cliente1, cliente2);
-
+		
+		ContaPoupanca.modificaTaxaDeJuros(5);
+		
+		exibeJurosClientes(cliente1, cliente2);
 	}
 	
 	public static void exibeJurosClientes(ContaPoupanca... conta) {
+		
+		System.out.println("Saldo dos clientes durante doze meses com uma taxa de juros de " +ContaPoupanca.getTaxaDeJurosAnual()+ " ao ano\n");
 		
 		for(int i = 0; i < conta.length; i++) {
 			
@@ -25,7 +31,7 @@ public class ContaPoupancaTeste {
 			
 			for(int j = 0; j < conta.length; j++) {
 				
-				System.out.printf("%.2f\t", conta[j].getSaldoPoupanca());
+				System.out.printf("%.2f\t\t", conta[j].getSaldoPoupanca());
 				conta[j].calculaJurosMensal();
 				
 			}
@@ -33,6 +39,8 @@ public class ContaPoupancaTeste {
 			System.out.println();
 			
 		}
+		
+		System.out.println("\n");
 		
 	}
 }
