@@ -3,11 +3,15 @@ public class ContaPoupanca {
 	
 	private double saldoPoupanca;
 	
-	static double taxaDeJurosAnual;
+	private static double taxaDeJurosAnual;
 	
 	
 	public void calculaJurosMensal() {
 		setSaldoPoupanca(getSaldoPoupanca() + (getSaldoPoupanca() * getTaxaDeJurosAnual()/12));
+	}
+	
+	public static void modificaTaxaDeJuros(double taxaDeJurosAnual) {
+		ContaPoupanca.taxaDeJurosAnual = taxaDeJurosAnual;
 	}
 
 
