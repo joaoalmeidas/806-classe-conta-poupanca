@@ -1,3 +1,4 @@
+import java.text.NumberFormat;
 
 public class ContaPoupancaTeste {
 
@@ -21,11 +22,19 @@ public class ContaPoupancaTeste {
 	
 	public static void exibeJurosClientesUmAno(ContaPoupanca... conta) {
 		
-		System.out.println("Saldo dos clientes durante doze meses com uma taxa de juros de " +ContaPoupanca.getTaxaDeJurosAnual()+ " ao ano\n");
+		System.out.println("Saldo dos clientes durante doze meses com uma taxa de juros de " +ContaPoupanca.getTaxaDeJurosAnual()+ "% ao ano\n");
 		
 		for(int i = 0; i < conta.length; i++) {
 			
-			System.out.printf("Cliente %d\t", i+1);	
+			System.out.printf("Cliente %d\t\t", i+1);	
+			
+		}
+		
+		System.out.println();
+		
+		for(int j = 0; j < conta.length; j++) {
+			
+			System.out.printf("%s\t\t", NumberFormat.getCurrencyInstance().format(conta[j].getSaldoPoupanca()));
 			
 		}
 		
@@ -35,8 +44,8 @@ public class ContaPoupancaTeste {
 			
 			for(int j = 0; j < conta.length; j++) {
 				
-				System.out.printf("%.2f\t\t", conta[j].getSaldoPoupanca());
 				conta[j].calculaJurosMensal();
+				System.out.printf("%s\t\t", NumberFormat.getCurrencyInstance().format(conta[j].getSaldoPoupanca()));
 				
 			}
 			
@@ -50,11 +59,19 @@ public class ContaPoupancaTeste {
 	
 	public static void exibeJurosClientesUmMes(ContaPoupanca... conta) {
 		
-		System.out.println("Saldo dos clientes durante doze meses com uma taxa de juros de " +ContaPoupanca.getTaxaDeJurosAnual()+ " ao ano\n");
+		System.out.println("Saldo dos clientes durante um mês com uma taxa de juros de " +ContaPoupanca.getTaxaDeJurosAnual()+ "% ao ano\n");
 		
 		for(int i = 0; i < conta.length; i++) {
 			
-			System.out.printf("Cliente %d\t", i+1);	
+			System.out.printf("Cliente %d\t\t", i+1);	
+			
+		}
+		
+		System.out.println();
+		
+		for(int j = 0; j < conta.length; j++) {
+			
+			System.out.printf("%s\t\t", NumberFormat.getCurrencyInstance().format(conta[j].getSaldoPoupanca()));
 			
 		}
 		
@@ -64,8 +81,9 @@ public class ContaPoupancaTeste {
 			
 			for(int j = 0; j < conta.length; j++) {
 				
-				System.out.printf("%.2f\t\t", conta[j].getSaldoPoupanca());
 				conta[j].calculaJurosMensal();
+				System.out.printf("%s\t\t", NumberFormat.getCurrencyInstance().format(conta[j].getSaldoPoupanca()));
+				
 				
 			}
 			
