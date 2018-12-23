@@ -15,7 +15,7 @@ public class ContaPoupancaTeste {
 		
 		for(int i = 0; i < conta.length; i++) {
 			
-			System.out.printf("Cliente %d\t", i);	
+			System.out.printf("Cliente %d\t", i+1);	
 			
 		}
 		

@@ -10,7 +10,7 @@ public class ContaPoupanca {
 	}
 
 	public void calculaJurosMensal() {
-		setSaldoPoupanca(getSaldoPoupanca() + (getSaldoPoupanca() * getTaxaDeJurosAnual()/12));
+		setSaldoPoupanca(getSaldoPoupanca() + (getTaxaDeJurosAnual()/12) * getSaldoPoupanca() / 100 );
 	}
 	
 	public static void modificaTaxaDeJuros(double taxaDeJurosAnual) {
